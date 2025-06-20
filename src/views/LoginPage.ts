@@ -1,7 +1,7 @@
 import {el,setChildren} from "redom"
 import "../styles/LoginPage.css"
 import { handleLoginForm } from "../controllers/login"
-import { navigate } from "./Router";
+import { Navigate } from "./Router";
 
 export function RenderLoginPage(){
     const loginForm = el("form",{
@@ -42,10 +42,10 @@ export function RenderLoginPage(){
         el("a",{
             href:"/signup/",
             class:"to-reg",
-            onclick:(e)=>{
+            onclick:(e:Event)=>{
                 e.preventDefault();
 
-                navigate("/signup/")
+                Navigate("/signup/")
             },
         },"try singing up."),
         el("button",{
@@ -58,10 +58,10 @@ export function RenderLoginPage(){
         el("a",{
             href:"/",
             class:"back",
-            onclick: (e)=>{
+            onclick: (e:Event)=>{
                 e.preventDefault();
 
-                navigate("/");
+                Navigate("/");
             },
         },"Back"),
         loginForm

@@ -1,5 +1,5 @@
 import Cookies from "js-cookie"
-import { navigate } from "../views/Router"
+import { Navigate } from "../views/Router"
 
 interface ILogin {
     message:string,
@@ -38,7 +38,7 @@ export async function handleLoginForm(e:Event): Promise<void>{
 
     if(LoginResponse.message === "авторизация прошла успешно"){
         Cookies.set("tokenId",LoginResponse.token);
-        navigate("/");
+        Navigate("/");
     }else{
         const errorText = document.getElementById("error-msg");
         if(errorText){

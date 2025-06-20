@@ -4,7 +4,7 @@ import { RenderLoginPage } from "./LoginPage";
 
 const router = new Navigo('/',{hash:false, strategy:"ALL"});
 
-export function navigate(destination:string):void{
+export function Navigate(destination:string):void{
     router.navigate(destination);
 }
 

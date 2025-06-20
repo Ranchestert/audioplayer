@@ -1,5 +1,5 @@
-import { navigate } from "./src/views/Router";
+import { Navigate } from "./src/views/Router";
 
 document.addEventListener('DOMContentLoaded',()=>{
-    navigate("/");
+    Navigate("/");
 })
