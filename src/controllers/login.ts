@@ -1,5 +1,5 @@
 import Cookies from "js-cookie"
-import { Navigate } from "../views/Router"
+import { FormEvent } from "react";
 
 interface ILogin {
     message:string,
@@ -26,19 +26,19 @@ async function APILogin(username:string, password:string): Promise<ILogin> {
     })
 }
 
-export async function handleLoginForm(e:Event): Promise<void>{
+export async function handleLoginForm(e:FormEvent<HTMLFormElement>): Promise<void>{
     e.preventDefault();
 
     const form=e.target as HTMLFormElement;
 
-    const username = (form.elements.namedItem("Login") as HTMLInputElement).value;
+    const username = (form.elements.namedItem("login") as HTMLInputElement).value;
     const password = (form.elements.namedItem("Password") as HTMLInputElement).value;
 
     let LoginResponse:ILogin=await APILogin(username,password);
 
     if(LoginResponse.message === "авторизация прошла успешно"){
         Cookies.set("tokenId",LoginResponse.token);
-        Navigate("/");
+        //Navigate("/");
     }else{
         const errorText = document.getElementById("error-msg");
         if(errorText){

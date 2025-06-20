@@ -10,6 +10,7 @@
   "description": "",
   "devDependencies": {
     "@types/jest": "^30.0.0",
+    "@types/react": "^19.1.8",
     "jest": "^30.0.2",
     "parcel": "^2.15.2",
     "ts-jest": "^29.4.0",
@@ -18,6 +19,7 @@
   "dependencies": {
     "js-cookie": "^3.0.5",
     "navigo": "^8.11.1",
-    "redom": "^4.3.0"
+    "redom": "^4.3.0",
+    "solid-js": "^1.9.7"
   }
 }
